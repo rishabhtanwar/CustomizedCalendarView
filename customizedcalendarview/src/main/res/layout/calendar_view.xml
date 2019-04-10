@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+  <LinearLayout
+      android:id="@+id/parent_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+      <!-- days header -->
+      <LinearLayout
+          android:id="@+id/calendar_header"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/first_row"
+          android:layout_marginTop="13dp"
+          android:gravity="center_vertical"
+          android:orientation="horizontal"
+          >
+
+        <TextView
+            android:id="@+id/sunday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.7"
+            android:gravity="center_horizontal"
+            android:text="SUN"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/monday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.7"
+            android:gravity="center_horizontal"
+            android:text="MON"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/tuesday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.7"
+            android:gravity="center_horizontal"
+            android:text="TUE"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/wednesday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.7"
+            android:gravity="center_horizontal"
+            android:text="WED"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/thursday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.7"
+            android:gravity="center_horizontal"
+            android:text="THU"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/friday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.7"
+            android:gravity="center_horizontal"
+            android:text="FRI"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/saturday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:alpha="0.7"
+            android:gravity="center_horizontal"
+            android:text="SAT"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            />
+      </LinearLayout>
+
+      <!-- date toolbar -->
+      <RelativeLayout
+          android:id="@+id/first_row"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingBottom="8dp"
+          android:paddingLeft="10dp"
+          android:paddingRight="10dp"
+          android:paddingTop="8dp"
+          >
+
+        <!-- prev button -->
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/calendar_prev_button"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_chevron_left"
+            tools:ignore="VectorDrawableCompat"
+            />
+
+        <!-- date title -->
+        <TextView
+            android:id="@+id/calendar_date_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:alpha="0.8"
+            android:text="FEBRUARY"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_size_14"
+            />
+
+        <!-- next button -->
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/calendar_next_button"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_chevron_right"
+            tools:ignore="VectorDrawableCompat"
+            />
+      </RelativeLayout>
+
+      <!-- days view -->
+      <GridView
+          android:id="@+id/calendar_grid"
+          android:layout_width="fill_parent"
+          android:layout_height="match_parent"
+          android:layout_below="@+id/calendar_header"
+          android:horizontalSpacing="0dp"
+          android:numColumns="7"
+          android:stretchMode="columnWidth"
+          android:verticalSpacing="5dp"
+          />
+
+
+    </LinearLayout>
+
+
+  </LinearLayout>
+
+
+  <TextView
+      android:id="@+id/button_done"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:layout_gravity="center|bottom"
+      android:layout_marginBottom="@dimen/margin_10"
+      android:background="@drawable/primary_circle_fill"
+      android:fontFamily="serif"
+      android:gravity="center"
+      android:text="Done"
+      android:textColor="@color/white"
+
+      />
+
+
+</FrameLayout>

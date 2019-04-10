@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="CalendarView">
+    <attr format="string" name="dateFormat"/>
+    <attr format="color" name="background_color"/>
+    <attr format="color" name="tint_color"/>
+    <attr format="color" name="week_day_color"/>
+    <attr format="color" name="month_text_color"/>
+    <attr format="float" name="alpha"/>
+    <attr format="boolean" name="future_dates"/>
+    <attr format="boolean" name="past_dates"/>
+    <attr format="color" name="date_text_color"/>
+    <attr format="color" name="done_bg_color"/>
+    <attr format="color" name="done_text_color"/>
+  </declare-styleable>
+</resources>

@@ -9,7 +9,7 @@ ext{
   libraryName = 'customizedcalendarview'
   publishedGroupId = 'com.customized'
   artifact = 'customizedcalendarview'
-  libraryVersion = '1.0.0'
+  libraryVersion = '1.0.2'
   libraryDescription ='A new way to customize calendar'
   siteUrl = 'https://github.com/rishabhtanwar/CustomizedCalendarView'
   gitUrl = 'https://github.com/rishabhtanwar/CustomizedCalendarView.git'
@@ -37,6 +37,27 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
+  task createPom {
+    apply plugin: 'maven'
+    description "Generates pom.xml"
+    pom {
+      project {
+        groupId 'com.customized'
+        artifactId 'customizedcalendarview'
+        version '1.0.2'
+        packaging 'aar'
+      }
+    }.withXml {
+      def dependenciesNode = asNode().appendNode('dependencies')
+
+      configurations.compile.allDependencies.each { dependency ->
+        def dependencyNode = dependenciesNode.appendNode('dependency')
+        dependencyNode.appendNode('groupId', dependency.group)
+        dependencyNode.appendNode('artifactId', dependency.name)
+        dependencyNode.appendNode('version', dependency.version)
+      }
+    }.writeTo("$buildDir/pom.xml")
+  }
 }
 
 dependencies {
@@ -54,6 +75,7 @@ dependencies {
 subprojects {
   tasks.withType(Javadoc).all { enabled = false }
 }
+
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
